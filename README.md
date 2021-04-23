@@ -2,6 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# source link (react redux tutorial in telugu)
+https://www.youtube.com/watch?v=xD0jxZiF95s&t=3632s
+
 ## Available Scripts
 
 In the project directory, you can run:
