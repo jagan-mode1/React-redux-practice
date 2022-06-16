@@ -3,7 +3,12 @@ import {
     BUY_MOBILE,
     FETCH_USERS_REQUEST,
     FETCH_USERS_SUCCESS,
-    FETCH_USERS_FAIL
+    FETCH_USERS_FAIL,
+    FETCH_COUNTRIES_REQUEST,
+    FETCH_COUNTRY_SUCCESS,
+    FETCH_COUNTRY_FAIL,
+    SET_PRODUCTS,
+    SEND_FORM_DATA
   } from "./actionTypes";
 import axios from "axios";
 
@@ -38,6 +43,22 @@ export const fetchUsersRequest = () => {
     };
   };
 
+  // Fetch users success Action
+  export const fetchCountriessSuccess = users => {
+    return {
+      type: FETCH_COUNTRY_SUCCESS,
+      data: users
+    };
+  };
+  // Fetch users fail Action
+  export const fetchCountriessFail = error => {
+    return {
+      type: FETCH_COUNTRY_FAIL,
+      data: error
+    };
+  };
+
+
   // Fetch users flow Action
 export const fetchUsers = () => {
     return function(dispatch) {
@@ -52,4 +73,28 @@ export const fetchUsers = () => {
           dispatch(fetchUsersFail(error));
         });
     };
+  };
+
+  // Fetch users flow Action
+export const setProducts = (products) => {
+    return {
+      type: SET_PRODUCTS,
+      data: products
+    };
+  };
+
+  // Fetch users flow Action
+export const sendFormData = (form_data) => {
+  return function() {
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then(response => {
+        let users = response.data.map(user => user.id);
+        console.log("--api data--", users)
+        console.log("--form data--", form_data)
+      })
+      .catch(error => {
+        
+      });
+  };
   };
