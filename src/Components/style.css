@@ -120,3 +120,9 @@ button:hover{
     letter-spacing: 1px;
     color: #00acc1;
   }
+  .bg_bf{
+    background-color: #bfbfbf;
+    padding: 30px;
+    min-height: 80vh;
+  }
+  

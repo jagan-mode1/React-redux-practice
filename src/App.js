@@ -5,7 +5,9 @@ import './Components/style.css';
 // import TodoApp from "./TodoApp";
 import Dashboard from "./Components/Dashboard.js";
 import About from "./Components/About";
+import About2 from "./Components/Functional-components/About";
 import Shop from "./Components/Shop";
+import ContactForm from "./Components/Functional-components/contact-form";
 
 
 class App extends Component {
@@ -26,7 +28,13 @@ class App extends Component {
                   <Link to="/about" className="nav-link" >About</Link>
                 </li>
                 <li className="nav-item">
+                  <Link to="/about2" className="nav-link" >About2</Link>
+                </li>
+                <li className="nav-item">
                   <Link to="/shop" className="nav-link">Shop</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/contact-form" className="nav-link">Contact form</Link>
                 </li>
               </ul>
             </div>
@@ -36,7 +44,9 @@ class App extends Component {
         <Switch>
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/about" component={About} />  
+          <Route path="/about2" component={About2} />  
           <Route path="/shop" component={Shop} />
+          <Route path="/contact-form" component={ContactForm} />
           <Route path="/" component={Dashboard} />
         </Switch>
     </div>
